@@ -1,6 +1,6 @@
 #pragma once
 #include "stdafx.h"
-#include <stack>
+#include <vector>
 namespace ShapeLibrary
 {
 	class OpenPolyline : Shape
@@ -11,6 +11,6 @@ namespace ShapeLibrary
 		void draw();
 		void add(const Point & _point);
 	private:
-
+		vector<Point> vecPoints;
 	};
 }
