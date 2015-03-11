@@ -13,7 +13,7 @@ Rectangle::~Rectangle(){
 
 void Rectangle::draw(){
 	Shape::getIWindow().drawRectangle(*position, width, height);
-	Shape::getIWindow().setDrawingColor(ShapeLibrary::Color::BLACK);
+	Shape::getIWindow().setDrawingColor(filledColor);
 }
 
 void Rectangle::setHeight(unsigned int _height){

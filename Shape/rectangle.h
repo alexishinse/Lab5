@@ -16,6 +16,6 @@ namespace ShapeLibrary
 		Point* position;
 		unsigned int height;
 		unsigned int width;
-		unsigned int filledColor = 0;
+		Color::COLOR_TYPE filledColor = Color::COLOR_TYPE::CYAN;
 	};
 }
