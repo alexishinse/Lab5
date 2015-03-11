@@ -9,13 +9,14 @@ namespace ShapeLibrary
 		Rectangle(IWindowAPI& _IWindowAPI);
 		~Rectangle();
 		void draw();
-		void setHeight(unsigned int _height);
+		void setHeight(int _height);
 		void setPosition(Point & _position);
-		void setWidth(unsigned int _width);
+		void setWidth(int _width);
+		void setFillColor(Color::COLOR_TYPE _color);
+		void setLineColor(Color::COLOR_TYPE _color);
 	private:
-		Point* position;
-		unsigned int height;
-		unsigned int width;
-		Color::COLOR_TYPE filledColor = Color::COLOR_TYPE::CYAN;
+		Point* position = NULL;
+		int height;
+		int width;
 	};
 }

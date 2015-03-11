@@ -14,19 +14,18 @@ Circle::~Circle(){
 void Circle::draw(){
 	if (positionCenter == NULL) throw runtime_error("Le cercle doit possèder une position pour pouvoir être dessiner.");
 
+	Shape::draw();
 		Shape::getIWindow().fillCircle(*positionCenter, radius);
-		Shape::getIWindow().setDrawingColor(drawColor);
 		Shape::getIWindow().drawCircle(*positionCenter, radius);
 
 }
 
-void Circle::setLineColor(Color::COLOR_TYPE _color){
-	this->drawColor = _color;
+void Circle::setFillColor(Color::COLOR_TYPE _color){
+	Shape::setFilledColor(_color);
 }
 
-
-void Circle::setFillColor(Color::COLOR_TYPE _color){
-	this->filledColor = _color;
+void Circle::setLineColor(Color::COLOR_TYPE _color){
+	Shape::setDrawColor(_color);
 }
 
 void Circle::setCenter(Point & _position){

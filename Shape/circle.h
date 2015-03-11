@@ -14,8 +14,6 @@ namespace ShapeLibrary
 		void setFillColor(Color::COLOR_TYPE _color);
 		void setLineColor(Color::COLOR_TYPE _color);
 	private:
-		Color::COLOR_TYPE filledColor = Color::COLOR_TYPE::BLUE;
-		Color::COLOR_TYPE drawColor = Color::COLOR_TYPE::GREEN;
 		int radius = NULL;
 		Point* positionCenter = NULL;
 	};
