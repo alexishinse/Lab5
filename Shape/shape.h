@@ -13,13 +13,12 @@ namespace ShapeLibrary
 	public:
 		Shape(IWindowAPI & _IWindowAPI);
 		~Shape();
-		virtual void draw();
-		IWindowAPI & getIWindow();
-		void setFilledColor(Color::COLOR_TYPE _color);
-		void setDrawColor(Color::COLOR_TYPE _color);
-	private:
+		virtual void draw() = 0;
+	protected:
 		IWindowAPI  *iWindowAPI;
 		Color::COLOR_TYPE filledColor = Color::COLOR_TYPE::BLUE;
 		Color::COLOR_TYPE drawColor = Color::COLOR_TYPE::GREEN;
+		void SetFilledShapeColor();
+		void SetShapeColor();
 	};
 }

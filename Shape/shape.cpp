@@ -9,19 +9,14 @@ Shape::Shape(IWindowAPI & _IWindowAPI){
 Shape::~Shape(){
 }
 
-IWindowAPI & Shape::getIWindow(){
-	return *iWindowAPI;
-}
-
-void Shape::setFilledColor(Color::COLOR_TYPE _color){
-	this->filledColor = _color;
-}
-
-void Shape::setDrawColor(Color::COLOR_TYPE _color){
-	this->drawColor = _color;
-}
-
 void Shape::draw(){
+}
+
+void Shape::SetFilledShapeColor(){
+	this->iWindowAPI->setDrawingColor(filledColor);
+}
+
+void Shape::SetShapeColor(){
 	this->iWindowAPI->setDrawingColor(drawColor);
 }
 

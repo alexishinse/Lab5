@@ -16,5 +16,7 @@ namespace ShapeLibrary
 	private:
 		int radius = NULL;
 		Point* positionCenter = NULL;
+		void drawFilledCircle();
+		void drawCircle();
 	};
 }

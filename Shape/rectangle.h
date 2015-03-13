@@ -18,5 +18,7 @@ namespace ShapeLibrary
 		Point* position = NULL;
 		int height;
 		int width;
+		void drawFilledRectangle();
+		void drawRectangle();
 	};
 }
