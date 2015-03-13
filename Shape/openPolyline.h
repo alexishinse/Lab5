@@ -3,14 +3,12 @@
 #include <vector>
 namespace ShapeLibrary
 {
-	class OpenPolyline : Shape
+	class OpenPolyline : public Shape
 	{
 	public:
 		OpenPolyline(IWindowAPI& _IWindowAPI);
 		~OpenPolyline();
 		void draw();
-		void add(const Point & _point);
-	private:
-		vector<Point> vecPoints;
+		virtual void add(const Point & _point);
 	};
 }

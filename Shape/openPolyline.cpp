@@ -27,5 +27,5 @@ void OpenPolyline::draw(){
 }
 
 void OpenPolyline::add(const Point & _point){
-	vecPoints.push_back(_point);
+	Shape::add(_point);
 }

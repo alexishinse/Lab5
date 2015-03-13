@@ -12,7 +12,7 @@ Circle::~Circle(){
 }
 
 void Circle::draw(){
-	if (positionCenter == NULL) throw runtime_error("Le cercle doit possèder une position pour pouvoir être dessiner.");
+	if (Shape::vecPoints.size() == NULL) throw runtime_error("Le cercle doit possèder une position pour pouvoir être dessiner.");
 
 	drawFilledCircle();
 	drawCircle();
@@ -27,8 +27,8 @@ void Circle::setLineColor(Color::COLOR_TYPE _color){
 	Shape::drawColor = _color;
 }
 
-void Circle::setCenter(Point & _position){
-	this->positionCenter = &_position;
+void Circle::setCenter(const Point & _position){
+	Shape::add(_position);
 }
 
 void Circle::setRadius(int _radius){
@@ -38,10 +38,10 @@ void Circle::setRadius(int _radius){
 
 void Circle::drawFilledCircle(){
 	Shape::SetFilledShapeColor();
-	Shape::iWindowAPI->fillCircle(*positionCenter, radius);
+	Shape::iWindowAPI->fillCircle(*Shape::vecPoints.begin(), radius);
 }
 
 void Circle::drawCircle(){
 	Shape::SetShapeColor();
-	Shape::iWindowAPI->drawCircle(*positionCenter, radius);
+	Shape::iWindowAPI->drawCircle(*Shape::vecPoints.begin(), radius);
 }

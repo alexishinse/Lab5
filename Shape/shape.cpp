@@ -9,6 +9,10 @@ Shape::Shape(IWindowAPI & _IWindowAPI){
 Shape::~Shape(){
 }
 
+void Shape::add(const Point & _point){
+	vecPoints.push_back(_point);
+}
+
 void Shape::draw(){
 }
 

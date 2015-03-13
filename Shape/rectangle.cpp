@@ -20,7 +20,7 @@ void Rectangle::setLineColor(Color::COLOR_TYPE _color){
 }
 
 void Rectangle::draw(){
-	if (position == NULL) throw runtime_error("La position doit être spécifié avant de dessiner le rectangle");
+	if (Shape::vecPoints.size() == NULL) throw runtime_error("La position doit être spécifié avant de dessiner le rectangle");
 
 	drawFilledRectangle();
 	drawRectangle();
@@ -36,16 +36,16 @@ void Rectangle::setWidth(int _width){
 	this->width = _width;
 }
 
-void Rectangle::setPosition(Point & _position){
-	this->position = &_position;
+void Rectangle::setPosition(const Point & _position){
+	Shape::add(_position);
 }
 
 void Rectangle::drawFilledRectangle(){
 	Shape::SetFilledShapeColor();
-	Shape::iWindowAPI->fillRectangle(*position, width, height);
+	Shape::iWindowAPI->fillRectangle(*Shape::vecPoints.begin(), width, height);
 }
 
 void Rectangle::drawRectangle(){
 	Shape::SetShapeColor();
-	Shape::iWindowAPI->drawRectangle(*position, width, height);
+	Shape::iWindowAPI->drawRectangle(*Shape::vecPoints.begin(), width, height);
 }
