@@ -9,6 +9,9 @@ ClosedPolyline::ClosedPolyline(IWindowAPI & _IWindowAPI)
 }
 
 void ClosedPolyline::draw(){
+
+	if (vecPoints.size() < 3) throw runtime_error("Le nombre minimal de point d'un closedPolyline doit être de 3 points.");
+
 	vector<Point>::iterator it;
 
 	Shape::iWindowAPI->setDrawingColor(ShapeLibrary::Color::BLACK);
