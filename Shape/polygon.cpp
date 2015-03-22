@@ -9,23 +9,7 @@ Polygon::Polygon(IWindowAPI & _IWindowAPI)
 }
 
 void Polygon::draw(){
-
-	if (vecPoints.size() < 3) throw runtime_error("Le nombre minimal de point d'un closedPolyline doit être de 3 points.");
-
-	vector<Point>::iterator it;
-
-	Shape::iWindowAPI->setDrawingColor(ShapeLibrary::Color::BLACK);
-
-	if (vecPoints.size() < 2) throw runtime_error("Le nombre de point minimal doit etre de deux avant de dessiner.");
-
-	for (it = vecPoints.begin(); it != vecPoints.end(); it++){
-		if (vecPoints.end() - 1 != it){
-			Shape::iWindowAPI->drawLine(*it, *(it + 1));
-		}
-		else{
-			Shape::iWindowAPI->drawLine(*vecPoints.begin(), *it);
-		}
-	}
+	ClosedPolyline::draw();
 }
 
 void Polygon::add(const Point & _point){
@@ -37,9 +21,6 @@ void Polygon::add(const Point & _point){
 
 double Polygon::getVariationLine(const Point & _point1, const Point & _point2){
 	if (_point2.x == _point1.x)return NULL;
-	double x = _point2.y - _point1.y;
-	double y = _point2.x - _point1.x;
-	double z = x / y;
     return (_point2.y - _point1.y) / (_point2.x - _point1.x);
 }
 
@@ -52,9 +33,6 @@ bool Polygon::isPointOnLine(const Point & _point){
 				double x = getVariationLine(*it, *(it + 1));
 				double y = getVariationLine(_point, *(it + 1));
 				if (getVariationLine(*it, *(it + 1)) == getVariationLine(_point, *(it + 1)))return true;
-			}
-			else{
-				if (getVariationLine(*vecPoints.begin(), *it) == getVariationLine(_point, *it)) return true;
 			}
 		}
 	}

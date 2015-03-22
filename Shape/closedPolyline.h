@@ -9,6 +9,6 @@ namespace ShapeLibrary
 		ClosedPolyline::ClosedPolyline(IWindowAPI & _IWindowAPI);
 		ClosedPolyline::~ClosedPolyline();
 		virtual void add(const Point & _point);
-		void draw();
+		virtual void draw();
 	};
 }

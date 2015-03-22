@@ -12,6 +12,8 @@ OpenPolyline::~OpenPolyline(){
 	vecPoints.clear();
 }
 
+
+
 void OpenPolyline::draw(){
 	vector<Point>::iterator it;
 

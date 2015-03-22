@@ -10,7 +10,7 @@ ClosedPolyline::ClosedPolyline(IWindowAPI & _IWindowAPI)
 
 void ClosedPolyline::draw(){
 
-	if (vecPoints.size() < 3) throw runtime_error("Le nombre minimal de point d'un closedPolyline doit être de 3 points.");
+	if (vecPoints.size() < 3) throw runtime_error("Le nombre minimal de point d'un closedPolyline doit être 2");
 
 	vector<Point>::iterator it;
 
