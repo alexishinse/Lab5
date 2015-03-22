@@ -11,7 +11,8 @@ namespace ShapeLibrary
 		virtual void add(const Point & _point);
 		void draw();
 	private:
-		unsigned int getVariationLine(const Point & _point1, const Point & _point2);
+		double getVariationLine(const Point & _point1, const Point & _point2);
 		bool isPointOnLine(const Point & _point);
+		bool isLineCrossingAnother(const Point & _point);
 	};
 }
