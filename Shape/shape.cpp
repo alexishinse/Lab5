@@ -13,6 +13,10 @@ void Shape::add(const Point & _point){
 	vecPoints.push_back(_point);
 }
 
+const Point & Shape::getPoint(int _index){
+	return vecPoints.at(_index);
+}
+
 void Shape::draw(){
 }
 

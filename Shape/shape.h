@@ -15,6 +15,7 @@ namespace ShapeLibrary
 		~Shape();
 		virtual void draw() = 0;
 		virtual void add(const Point & _point);
+		virtual const Point & getPoint(int _index);
 	protected:
 		IWindowAPI  *iWindowAPI;
 		Color::COLOR_TYPE filledColor = Color::COLOR_TYPE::BLUE;
