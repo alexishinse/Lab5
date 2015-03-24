@@ -30,8 +30,6 @@ bool Polygon::isPointOnLine(const Point & _point){
 	for (it = vecPoints.begin(); it != vecPoints.end(); it++){
 		if (vecPoints.size() > 1){
 			if (vecPoints.end() - 1 != it){
-				double x = getVariationLine(*it, *(it + 1));
-				double y = getVariationLine(_point, *(it + 1));
 				if (getVariationLine(*it, *(it + 1)) == getVariationLine(_point, *(it + 1)))return true;
 			}
 		}
