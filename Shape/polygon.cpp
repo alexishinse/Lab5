@@ -8,9 +8,6 @@ Polygon::Polygon(IWindowAPI & _IWindowAPI)
 
 }
 
-void Polygon::draw(){
-	ClosedPolyline::draw();
-}
 
 void Polygon::add(const Point & _point){
 
@@ -20,7 +17,6 @@ void Polygon::add(const Point & _point){
 }
 
 double Polygon::getVariationLine(const Point & _point1, const Point & _point2){
-	if (_point2.x == _point1.x)return NULL;
     return (_point2.y - _point1.y) / (_point2.x - _point1.x);
 }
 
@@ -31,6 +27,7 @@ bool Polygon::isPointOnLine(const Point & _point){
 		if (vecPoints.size() > 1){
 			if (vecPoints.end() - 1 != it){
 				if (getVariationLine(*it, *(it + 1)) == getVariationLine(_point, *(it + 1)))return true;
+				if ((getVariationLine(*it, *(it + 1)) * -1) == getVariationLine(_point, *(it + 1)))return true;
 			}
 		}
 	}
@@ -59,7 +56,6 @@ bool Polygon::isLineCrossingAnother(const Point & _point){
 					double lineVar2 = getVariationLine(vecPoints.back(), _point);
 					double varDifference = lineVar1 - lineVar2;
 					double pointRencontreX = varDifference / ((*it).y - vecPoints.back().y);
-					//double pointRencontreX = ((*it).y - vecPoints.back().y) / (getVariationLine(*it, *(it + 1)) - getVariationLine(vecPoints.back(), _point));
 					if (pointRencontreX > minX && pointRencontreX < maxX) return true;
 				}
 			}
